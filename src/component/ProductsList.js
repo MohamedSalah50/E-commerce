@@ -32,11 +32,11 @@ const getproduct=async()=>{
     <>
       <h2 className="text-center m-3">our products</h2>
       <div className="container">
-       {/*categories.map((cat)=>{
+       {categories.map((cat)=>{
           return <button className="btn btn-info" onclick={()=>{
           getproductincategory(cat);
           }} key={cat}>{cat}</button>})
-        */}
+        }
         <div className="row">
           {Products.map((product) => {
             return (
