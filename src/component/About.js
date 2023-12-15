@@ -1,7 +1,4 @@
-function About(){
-    return( 
-    <>
-     about page
-    </>);
+function About() {
+  return <>about page</>;
 }
 export default About;
