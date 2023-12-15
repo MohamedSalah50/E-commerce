@@ -48,7 +48,7 @@ function ProductsList() {
         <div className="row">
 =======
         <div className="my-3">
-          {categories &&
+          {categories.length > 0 &&
             categories.map((cat) => (
               <Button
                 key={cat}
