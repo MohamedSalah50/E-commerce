@@ -40,7 +40,7 @@ function ProductsList() {
       <h2 className="text-center display-5 m-5">Our Products</h2>
       <div className="container">
         <div className="my-3">
-          {categories &&
+          {categories.length > 0 &&
             categories.map((cat) => (
               <Button
                 key={cat}
