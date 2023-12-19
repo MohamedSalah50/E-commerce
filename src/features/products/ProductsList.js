@@ -1,6 +1,7 @@
 import { Button, Col, Row } from "react-bootstrap";
-import Product from "./product";
+import Product from "../../components/product";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const API = "https://fakestoreapi.com/products";
 
@@ -8,10 +9,23 @@ function ProductsList() {
   const [Products, setproducts] = useState([]);
   const [categories, setCategories] = useState([]);
 
+  const search = useSelector((state) => state.product.search);
+  console.log(search);
+  const allProducts =
+    search !== ""
+      ? Products.filter((ele) =>
+          `${ele.title} ${ele.description} ${ele.category}`
+            .toLocaleLowerCase()
+            .includes(search.toLocaleLowerCase())
+        )
+      : Products;
+
   const getproduct = async () => {
     await fetch(API)
       .then((res) => res.json())
-      .then((data) => setproducts(data));
+      .then((data) => {
+        setproducts(data);
+      });
   };
 
   const getcategories = async () => {
@@ -45,16 +59,16 @@ function ProductsList() {
               <Button
                 key={cat}
                 onClick={() => getproductincategory(cat)}
-                className="btn-success mx-2"
+                className="btn-dark mx-2"
               >
                 {cat}
               </Button>
             ))}
         </div>
         <Row>
-          {Products.map((product) => {
+          {allProducts.map((product) => {
             return (
-              <Col className="col-3" key={product.id}>
+              <Col className="col-lg-3 col-md-6 col-sm-12  " key={product.id}>
                 <Product product={product} />
               </Col>
             );
