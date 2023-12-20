@@ -23,46 +23,48 @@ function NavBar() {
   }
 
   return (
-    <Navbar className="border-bottom border-3 shadow">
+    <Navbar className="border-bottom border-3 shadow" expand="md">
       <Container>
         <NavbarBrand>
           <Link to={"/"} className="nav-link">
             React Store
           </Link>
         </NavbarBrand>
-        <Nav className="d-flex justify-content-between align-items-center">
-          <NavItem className="me-2">
-            <p className="m-0 text-capitalize fs-5">welcome {user}👋</p>
-          </NavItem>
-          <NavItem>
-            <Link to={"/"} className="nav-link">
-              Home
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link to={"/about"} className="nav-link">
-              About
-            </Link>
-          </NavItem>
-          <NavItem className="m-2">
-            <Link
-              to={"/history"}
-              className=" d-flex align-items-center nav-link  text-decoration-none"
-            >
-              <FaShoppingCart size={20} />
-              &nbsp;{cartSize} cart
-            </Link>
-          </NavItem>
-          <NavItem className="me-2">
-            <SearchBar />
-          </NavItem>
-
-          <NavItem>
-            <Button className="btn-dark " onClick={handleLogout}>
-              Logout
-            </Button>
-          </NavItem>
-        </Nav>
+        <Navbar.Toggle aria-controls="navbarResponsive" />
+        <Navbar.Collapse id="navbarResponsive" className="justify-content-end">
+          <Nav className="d-flex justify-content-between align-items-center">
+            <NavItem className="me-2">
+              <p className="m-0 text-capitalize fs-5">welcome {user}👋</p>
+            </NavItem>
+            <NavItem>
+              <Link to={"/"} className="nav-link">
+                Home
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link to={"/about"} className="nav-link">
+                About
+              </Link>
+            </NavItem>
+            <NavItem className="m-2">
+              <Link
+                to={"/history"}
+                className=" d-flex align-items-center nav-link text-decoration-none"
+              >
+                <FaShoppingCart size={20} />
+                &nbsp;{cartSize} cart
+              </Link>
+            </NavItem>
+            <NavItem className="me-2">
+              <SearchBar />
+            </NavItem>
+            <NavItem>
+              <Button className="btn-dark m-2" onClick={handleLogout}>
+                Logout
+              </Button>
+            </NavItem>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );

@@ -59,7 +59,7 @@ function ProductsList() {
               <Button
                 key={cat}
                 onClick={() => getproductincategory(cat)}
-                className="btn-dark mx-2"
+                className="btn-dark m-2"
               >
                 {cat}
               </Button>
@@ -68,7 +68,7 @@ function ProductsList() {
         <Row>
           {allProducts.map((product) => {
             return (
-              <Col className="col-lg-3 col-md-6 col-sm-12  " key={product.id}>
+              <Col className="col-lg-3 col-md-6 col-sm-12" key={product.id}>
                 <Product product={product} />
               </Col>
             );

@@ -40,7 +40,7 @@ function Item({ item }) {
   return (
     <li className="list-group-item">
       <Row className="align-items-center my-3 rounded shadow p-3">
-        <Col className="col-3 ">
+        <Col xs={12} md={3}>
           <Image height={"100"} width={"100"} src={item.image} />
         </Col>
         <Col>

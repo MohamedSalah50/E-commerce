@@ -1,5 +1,5 @@
-import Image1 from "../images/image1.jpg";
-import Image2 from "../images/image2.png";
+import Image1 from "../images/image1.png";
+import Image2 from "../images/image2.jpg";
 import Image3 from "../images/image3.jpg";
 import "./slider.css";
 function Slider() {

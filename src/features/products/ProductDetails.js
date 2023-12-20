@@ -29,10 +29,10 @@ function ProductDes({ product }) {
   return (
     <Container className="my-5 rounded shadow p-5">
       <Row>
-        <Col>
+        <Col xs={12} md={6}>
           <Image src={product.image} fluid />
         </Col>
-        <Col>
+        <Col xs={12} md={6}>
           <h1>{product.title}</h1>
           <p>{product.description}</p>
           <p>{`price : ${product.price}`}</p>
