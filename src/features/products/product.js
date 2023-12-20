@@ -25,7 +25,7 @@ function Product(props) {
           buy now
         </Link>
         <Button variant="primary" className="ms-2" onClick={handleAddToCart}>
-          add to cart
+          add
         </Button>
       </Card.Body>
     </Card>

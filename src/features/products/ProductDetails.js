@@ -25,6 +25,10 @@ function ProductDes({ product }) {
 
   const navigate = useNavigate();
 
+  function handleGoToCart() {
+    navigate("/history");
+  }
+
   function handleBack() {
     navigate(-1);
   }
@@ -45,7 +49,7 @@ function ProductDes({ product }) {
           <Button variant="primary" onClick={handleAddToCart}>
             Add To Cart
           </Button>
-          <Button variant="success ms-2" onClick={handleBack}>
+          <Button variant="success ms-2" onClick={handleGoToCart}>
             go to cart 🛒
           </Button>
           <Button variant="secondary ms-2" onClick={handleBack}>
