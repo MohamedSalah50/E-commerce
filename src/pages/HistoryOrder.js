@@ -8,7 +8,7 @@ export default function HistoryOrder() {
 
   return (
     <>
-      <Container>
+      <Container className="p-5">
         {historyOrders.length > 0 ? (
           <>
             <ul>

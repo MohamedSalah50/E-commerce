@@ -1,5 +1,5 @@
 import { Button, Col, Row } from "react-bootstrap";
-import Product from "../../components/product";
+import Product from "./product";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 

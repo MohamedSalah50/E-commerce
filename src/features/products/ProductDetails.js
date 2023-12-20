@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
@@ -23,6 +23,11 @@ function ProductDETAILS() {
 function ProductDes({ product }) {
   const dispatch = useDispatch();
 
+  const navigate = useNavigate();
+
+  function handleBack() {
+    navigate(-1);
+  }
   function handleAddToCart() {
     dispatch(addProduct(product));
   }
@@ -39,6 +44,12 @@ function ProductDes({ product }) {
           <p>{`category : ${product.category}`}</p>
           <Button variant="primary" onClick={handleAddToCart}>
             Add To Cart
+          </Button>
+          <Button variant="success ms-2" onClick={handleBack}>
+            go to cart 🛒
+          </Button>
+          <Button variant="secondary ms-2" onClick={handleBack}>
+            back
           </Button>
         </Col>
       </Row>

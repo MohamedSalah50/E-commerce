@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { InputGroup } from "react-bootstrap";
 import { CiSearch } from "react-icons/ci";
-import { TiDelete } from "react-icons/ti";
 import { useDispatch } from "react-redux";
 import { searchProduct } from "./productSlice";
 import { useNavigate } from "react-router";
 
 export default function SearchBar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
 
@@ -37,8 +36,8 @@ export default function SearchBar() {
             value={search}
             onChange={(e) => handleSearch(e)}
           />
-          <button class="btn btn-outline-secondary" onClick={handleOpen}>
-            <TiDelete size={28} />
+          <button className="btn btn-outline-secondary" onClick={handleOpen}>
+            <CiSearch size={28} />
           </button>
         </InputGroup>
       ) : (
